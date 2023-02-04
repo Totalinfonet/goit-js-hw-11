@@ -37,8 +37,13 @@ async function handleFormSubmit(event) {
   event.preventDefault();
 
   const query = input.value;
+
   currentPage = initialPage;
 
+  if (!input.value) {
+    alert('Please enter your request in the input field');
+    return;
+  }
   try {
     const response = await fetchPhotos(query);
 

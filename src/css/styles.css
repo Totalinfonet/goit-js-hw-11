@@ -25,6 +25,7 @@ img {
   right: 0;
   background-color: #302af3;
   padding: 20px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +34,7 @@ img {
 }
 
 input[type='text'] {
-  width: 50%;
+  width: 33%;
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
@@ -55,6 +56,13 @@ input[type='text'] {
   cursor: pointer;
   border-radius: 5px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .search-button {
+    font-size: 0.8em;
+    padding: 0.5em 1em;
+  }
 }
 
 .search-button:hover {
