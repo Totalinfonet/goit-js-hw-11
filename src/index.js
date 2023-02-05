@@ -76,18 +76,18 @@ async function handleLoadMore() {
   const query = input.value;
   try {
     const response = await fetchPhotos(query);
-
+    const photos = response.data.hits;
     if (
       response.data.hits.length === 0 ||
       currentPage * PER_PAGE >= response.data.totalHits
     ) {
       loadMoreBtn.style.display = 'none';
+      renderPhotos(photos);
       Notiflix.Notify.failure(
         "We're sorry, but you've reached the end of search results."
       );
       return;
     }
-    const photos = response.data.hits;
     renderPhotos(photos);
 
     loadMoreBtn.style.display = 'block';
