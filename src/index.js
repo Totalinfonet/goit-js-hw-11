@@ -41,7 +41,7 @@ async function handleFormSubmit(event) {
   currentPage = initialPage;
 
   if (!input.value) {
-    alert('Please enter your request in the input field');
+    Notiflix.Notify.warning('Please enter your request in the input field');
     return;
   }
   try {
